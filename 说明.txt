@@ -1,0 +1,1 @@
+设置指示器间隔的方法在库的ShapeHintView类里
