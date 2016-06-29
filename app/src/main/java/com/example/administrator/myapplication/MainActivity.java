@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.perent_item_layout);
         mRollViewPager= (RollPagerView) findViewById(R.id.roll_view_pager);
         mRollViewPager.setAnimationDurtion(500);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private class TestLoopAdapter extends LoopPagerAdapter{
         public int[] imgs = {
-                R.drawable.img1,
-                R.drawable.img2,
-                R.drawable.img3,
-                R.drawable.img4,
-                R.drawable.img5,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.w,
+                R.drawable.d,
+                R.drawable.h
         };
 
         public TestLoopAdapter(RollPagerView viewPager) {
@@ -50,13 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public View getView(ViewGroup container, int position) {
             ImageView view = new ImageView(container.getContext());
-            view.setId(a);
+            view.setId(position);
             view.setOnClickListener(MainActivity.this);
             view.setImageResource(imgs[position]);
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            a++;
-            Log.i("MainActivity","ok!");
             return view;
         }
 
@@ -71,8 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         private int[] imgs = {
                 R.drawable.img1,
                 R.drawable.img2,
-                R.drawable.img3,
-                R.drawable.img4,
         };
 
 
